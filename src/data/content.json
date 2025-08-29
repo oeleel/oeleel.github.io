@@ -1,0 +1,35 @@
+{
+  "name": "Leo Lee",
+  "tagline": "Software Engineer · Building fast, thoughtful products",
+  "summary": "I design and ship performant web apps with an eye for UX, accessibility, and maintainability. Previously at ExampleCo; B.S. in CS. I care about building tools that feel fast and help people get things done.",
+  "skills": {
+    "Languages": ["Python", "Java", "JavaScript", "C++", "SQL", "HTML", "CSS"],
+    "Libraries/Frameworks": ["React", "Node.js", "Spring Boot", "Flask", "React", "REST APIs", "Cmake"],
+    "Tools": ["Git", "PostgreSQL", "Docker"]
+  },
+  "projects": [
+    {
+      "title": "PGAssistant",
+      "image": "/images/placeholder.svg",
+      "srcset": "/images/placeholder.svg 400w",
+      "tags": ["Python", "XGBoost", "Scikit-learn", "Pandas", "Numpy", "Matplotlib", "Seaborn"],
+      "summary": "Outcome-focused one-liner.",
+      "details": "Problem: users struggled to X. Approach: designed Y with Z to reduce friction. Impact: cut task time by 42% and increased completion by 18%.",
+      "links": { "demo": "#", "code": "#" }
+    },
+    {
+      "title": "Project Two",
+      "image": "/images/placeholder.svg",
+      "srcset": "/images/placeholder.svg 400w",
+      "tags": ["Python", "XGBoost", "Scikit-learn", "Pandas", "Numpy", "Matplotlib", "Seaborn"],
+      "summary": "Shipped a fast, interactive dashboard.",
+      "details": "Built a lightweight viz engine with off-main-thread data processing and virtualized rendering to keep 60fps on low-end devices.",
+      "links": { "demo": "#", "code": "#" }
+    }
+  ],
+  "contact": { "email": "you@example.com", "location": "City, Country" },
+  "socials": [
+    { "label": "GitHub", "href": "https://github.com/oeleel" },
+    { "label": "LinkedIn", "href": "https://linkedin.com/in/leolee04" }
+  ]
+}

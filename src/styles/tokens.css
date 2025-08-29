@@ -1,0 +1,37 @@
+:root {
+  /* color palette */
+  --bg: #0b0c0f;
+  --bg-elev: #12141a;
+  --text: #e6e7eb;
+  --muted: #a6a9b3;
+  --accent: #44c2ff; /* single accent color */
+  --accent-contrast: #041018;
+  --border: rgba(255,255,255,0.12);
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+
+  /* spacing & layout */
+  --maxw: 1400px;
+  --gutter: clamp(1.5rem, 3vw, 2rem);
+  --radius: 14px;
+  --header-h: 64px;
+
+  /* typography */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans,
+    Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --fs-hero: clamp(2rem, 5vw, 3.25rem);
+  --fs-h2: clamp(1.5rem, 3.5vw, 2rem);
+  --fs-h3: clamp(1.125rem, 2.5vw, 1.25rem);
+  --fs-body: clamp(0.95rem, 1.2vw, 1.05rem);
+  --fs-small: 0.9rem;
+}
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-elev: #f7f8fb;
+  --text: #1b1e24;
+  --muted: #5a6072;
+  --accent: #0a84ff;
+  --accent-contrast: #ffffff;
+  --border: rgba(0,0,0,0.12);
+  --shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
