@@ -5,6 +5,7 @@ import Home from './sections/Home.jsx';
 import About from './sections/About.jsx';
 import Experience from './sections/Experience.jsx';
 import Projects from './sections/Projects.jsx';
+import Resume from './sections/Resume.jsx';
 import Contact from './sections/Contact.jsx';
 import Toast from './components/Toast.jsx';
 import InteractiveBackground from './components/InteractiveBackground.jsx';
@@ -71,7 +72,7 @@ export default function App() {
   // Keyboard paging between sections (PageDown/PageUp/Space)
   useEffect(() => {
     function keyHandler(e) {
-      const order = ["home", "about", "experience", "projects", "contact"];
+      const order = ["home", "about", "experience", "projects", "resume", "contact"];
       const idx = order.indexOf(active);
       const prev = order[Math.max(0, idx - 1)];
       const next = order[Math.min(order.length - 1, idx + 1)];
@@ -115,6 +116,7 @@ export default function App() {
         <About content={content} />
         <Experience content={content} />
         <Projects content={content} />
+        <Resume content={content} />
         <Contact content={content} onToast={setToast} />
       </main>
 

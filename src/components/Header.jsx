@@ -7,6 +7,7 @@ function Header({ activeId, content }) {
     { id: "about", label: "About" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
+    { id: "resume", label: "Resume" },
     { id: "contact", label: "Contact" },
   ];
   

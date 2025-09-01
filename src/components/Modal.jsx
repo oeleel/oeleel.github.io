@@ -42,10 +42,23 @@ function Modal({ open, title, onClose, children }) {
     };
   }, [open, onClose]);
 
+  const handleBackdropClick = (e) => {
+    // Only close if clicking the backdrop itself, not the modal content
+    if (e.target === e.currentTarget) {
+      onClose?.();
+    }
+  };
+
   if (!open) return null;
   
   return (
-    <div className="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div 
+      className="modal-backdrop" 
+      role="dialog" 
+      aria-modal="true" 
+      aria-labelledby="modal-title"
+      onClick={handleBackdropClick}
+    >
       <div className="modal reveal in" ref={ref}>
         <header>
           <h3 id="modal-title" style={{ margin: 0 }}>{title}</h3>

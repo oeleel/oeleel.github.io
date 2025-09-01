@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import Section from '../components/Section.jsx';
-import Button from '../components/Button.jsx';
 import Tag from '../components/Tag.jsx';
 
 function About({ content }) {
@@ -27,7 +26,7 @@ function About({ content }) {
               <img src="/images/carousel3.jpg" alt="Project showcase 3" className="carousel-image" />
               <img src="/images/carousel4.jpg" alt="Project showcase 4" className="carousel-image" />
               <img src="/images/carousel5.jpg" alt="Project showcase 5" className="carousel-image" />
-              {/* Duplicate first few images for seamless loop */}
+              {/* Duplicate first few images for seamless loop */ }
               <img src="/images/carousel1.jpg" alt="Project showcase 1" className="carousel-image" />
               <img src="/images/carousel2.jpg" alt="Project showcase 2" className="carousel-image" />
               <img src="/images/carousel3.jpg" alt="Project showcase 3" className="carousel-image" />
@@ -49,11 +48,6 @@ function About({ content }) {
               </div>
             </div>
           ))}
-        </div>
-        <div className="center">
-          <Button as="a" className="primary" href="#" download>
-            Download Résumé
-          </Button>
         </div>
       </div>
     </Section>
