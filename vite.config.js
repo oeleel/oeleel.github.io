@@ -5,5 +5,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/personal-website/', // <-- replace with your repo name; leave as '/' if repo is YOUR_USERNAME.github.io
-
+  build: {
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name]-[hash][extname]'
+      }
+    }
+  }
 })
