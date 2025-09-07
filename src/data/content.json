@@ -20,7 +20,7 @@
       "tags": ["Python", "XGBoost", "NumPy", "Pandas", "scikit-learn", "Selenium", "SHAP"],
       "summary": "ML pipeline predicting PGA Tour scores with 0.44 RMSE accuracy.",
       "details": "• Built XGBoost model predicting player scoring averages with 0.44 RMSE and 70% variance explanation\n• Created Selenium web scraper to collect 1400+ player stats from PGA Tour website\n• Used feature ranking and cross-validation to identify top 9 predictive stats, reducing error by 15%\n• Applied SHAP analysis to find 'Greens in Regulation' and 'Birdie Percentage' as key predictors",
-      "links": { "demo": "#", "code": "#" }
+      "links": { "demo": "#", "code": "https://github.com/oeleel/PGAssistant" }
     },
     {
       "title": "Project Two",

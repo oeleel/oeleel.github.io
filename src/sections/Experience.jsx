@@ -13,6 +13,24 @@ function Experience({ content }) {
               <div className="timeline-item">
                 <div className="timeline-marker"></div>
                 <div className="timeline-content">
+                  <h4>Undergraduate Researcher</h4>
+                  <p className="company">University of Virginia</p>
+                  <p className="period">Aug. 2025 - Present</p>
+                  <p className="description">
+                    Working with Dr. Yanjun Qi (Principal Applied Scientist @ AWS) and PhD student Kefan Song on creating robust and safe LLMs and agentic AI. Researching frameworks for agentic AI systems that can perceive consequences and apply ethical reasoning, thereby moving beyond static rule-based restrictions toward dynamic, value-sensitive decision-making.
+                  </p>
+                  <div className="tech-stack">
+                    <Tag>Python</Tag>
+                    <Tag>Machine Learning</Tag>
+                    <Tag>LLMs</Tag>
+                    <Tag>AI Research</Tag>
+                  </div>
+                </div>
+              </div>
+
+              <div className="timeline-item">
+                <div className="timeline-marker"></div>
+                <div className="timeline-content">
                   <h4>Computer Science Teaching Assistant</h4>
                   <p className="company">University of Virginia</p>
                   <p className="period">Aug. 2025 - Present</p>

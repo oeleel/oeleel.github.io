@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Section from '../components/Section.jsx';
 import ProjectCard from '../components/ProjectCard.jsx';
 
@@ -22,6 +22,10 @@ function Projects({ content }) {
     };
   }, [expandedIndex]);
 
+  const handleToggle = useCallback((index) => {
+    setExpandedIndex(prevIndex => prevIndex === index ? null : index);
+  }, []);
+
   return (
     <Section id="projects" title="Projects">
       <div className="cards" role="list" ref={projectsRef}>
@@ -30,7 +34,7 @@ function Projects({ content }) {
             key={p.title} 
             project={p} 
             isExpanded={expandedIndex === i}
-            onToggle={() => setExpandedIndex(expandedIndex === i ? null : i)}
+            onToggle={() => handleToggle(i)}
           />
         ))}
       </div>

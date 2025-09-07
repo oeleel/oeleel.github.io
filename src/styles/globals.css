@@ -1,7 +1,12 @@
 * { box-sizing: border-box; }
 html, body, #root { height: 100%; }
 
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth; 
+  /* Optimize scrolling performance */
+  -webkit-overflow-scrolling: touch;
+  scroll-padding-top: var(--header-h);
+}
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -28,9 +33,12 @@ a:hover { text-decoration: underline; }
 /* Header */
 header.site-header {
   position: sticky; top: 0; z-index: 50; height: var(--header-h);
-  background: color-mix(in oklab, var(--bg) 92%, transparent);
-  backdrop-filter: saturate(140%) blur(10px);
+  background: color-mix(in oklab, var(--bg) 95%, transparent);
+  backdrop-filter: saturate(120%) blur(8px);
   border-bottom: 1px solid var(--border);
+  /* Hardware acceleration for smoother scrolling */
+  transform: translateZ(0);
+  will-change: transform;
 }
 .nav-inner { height: var(--header-h); display: flex; align-items: center; justify-content: space-between; }
 .brand { font-weight: 700; letter-spacing: 0.2px; }
@@ -61,6 +69,11 @@ main {
   scroll-snap-type: y mandatory; 
   position: relative;
   z-index: 1;
+  /* Hardware acceleration for smoother scrolling */
+  transform: translateZ(0);
+  will-change: scroll-position;
+  /* Contain layout and paint for better performance */
+  contain: layout style paint;
 }
 section.page {
   min-height: calc(100vh - var(--header-h));
@@ -68,6 +81,11 @@ section.page {
   display: grid; place-items: center;
   position: relative;
   z-index: 1;
+  /* Hardware acceleration for smoother animations */
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  /* Contain layout and paint for better performance */
+  contain: layout style paint;
 }
 @media (prefers-reduced-motion: reduce) {
   main { scroll-snap-type: none; }
@@ -90,8 +108,10 @@ section.page {
 .page .container {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
-              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Hardware acceleration */
+  will-change: opacity, transform;
 }
 
 .page .container.fade-in {
@@ -103,8 +123,10 @@ section.page {
 .page .container .stack > * {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
-              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Hardware acceleration */
+  will-change: opacity, transform;
 }
 
 .page .container.fade-in .stack > * {
@@ -122,8 +144,10 @@ section.page {
 .cards, .skills, .experience-grid {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
-              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Hardware acceleration */
+  will-change: opacity, transform;
 }
 
 .page .container.fade-in .cards,
@@ -187,6 +211,9 @@ section.page {
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
+  /* Hardware acceleration for smoother animations */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .carousel-container {
@@ -204,6 +231,9 @@ section.page {
   animation: carousel-scroll 40s linear infinite;
   gap: 1rem;
   padding: 0 0.5rem;
+  /* Hardware acceleration for smoother animation */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .carousel-image {
@@ -212,6 +242,9 @@ section.page {
   object-fit: cover;
   flex-shrink: 0;
   border-radius: 12px;
+  /* Hardware acceleration for smoother rendering */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 @keyframes carousel-scroll {
@@ -321,6 +354,7 @@ section.page {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 1rem;
+  align-items: start; /* Prevent cards from stretching to match height */
 }
 .card { 
   background: var(--bg-elev); 
@@ -395,6 +429,7 @@ section.page {
   background: color-mix(in oklab, var(--accent) 3%, transparent);
 }
 
+
 .expanded-content {
   padding: 1.5rem;
 }
@@ -408,6 +443,21 @@ section.page {
 .expanded-details p {
   margin: 0;
   line-height: 1.6;
+}
+
+.project-details-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  line-height: 1.6;
+}
+
+.project-details-list li {
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+}
+
+.project-details-list li:last-child {
+  margin-bottom: 0;
 }
 
 .expanded-details .btn-row {
@@ -696,8 +746,8 @@ footer { border-top: 1px solid var(--border); padding: 2rem 0; }
 
 /* Ensure content sections have proper contrast */
 section.page {
-  background: color-mix(in oklab, var(--bg) 95%, transparent);
-  backdrop-filter: blur(1px);
+  background: color-mix(in oklab, var(--bg) 98%, transparent);
+  /* Removed backdrop-filter for better performance on Windows */
 }
 
 /* Resume Section */

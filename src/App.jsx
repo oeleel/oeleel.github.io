@@ -23,8 +23,22 @@ export default function App() {
     const sections = Array.from(document.querySelectorAll("section.page"));
     const reveals = Array.from(document.querySelectorAll("[data-section]"));
 
+    // Throttle function for better performance
+    const throttle = (func, limit) => {
+      let inThrottle;
+      return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+          func.apply(context, args);
+          inThrottle = true;
+          setTimeout(() => inThrottle = false, limit);
+        }
+      }
+    };
+
     const io = new IntersectionObserver(
-      (entries) => {
+      throttle((entries) => {
         entries.forEach((entry) => {
           const id = entry.target.id;
           if (entry.isIntersecting) {
@@ -41,16 +55,16 @@ export default function App() {
             }
           }
         });
-      },
+      }, 100), // Throttle to 100ms
       { rootMargin: "-40% 0px -50% 0px", threshold: 0.01 }
     );
 
     const revealIO = new IntersectionObserver(
-      (entries) => {
+      throttle((entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) e.target.classList.add("in");
         });
-      },
+      }, 50), // Throttle reveal animations too
       { threshold: 0.1 }
     );
 

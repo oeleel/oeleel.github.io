@@ -76,8 +76,8 @@ function InteractiveBackground() {
       }
     }
 
-    // Create particles
-    const particleCount = Math.min(50, Math.floor(canvas.width * canvas.height / 20000));
+    // Create particles - reduced count for better performance on Windows
+    const particleCount = Math.min(30, Math.floor(canvas.width * canvas.height / 30000));
     particlesRef.current = Array.from({ length: particleCount }, () => new Particle());
 
     // Mouse move handler
@@ -89,39 +89,47 @@ function InteractiveBackground() {
 
     canvas.addEventListener('mousemove', handleMouseMove);
 
-    // Animation loop
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      // Update and draw particles
-      particlesRef.current.forEach(particle => {
-        particle.update(mouseRef.current.x, mouseRef.current.y);
-        particle.draw(ctx);
-      });
+    // Animation loop with performance optimizations
+    let lastTime = 0;
+    const targetFPS = 30; // Reduce from 60fps to 30fps for better performance
+    const frameInterval = 1000 / targetFPS;
+    
+    const animate = (currentTime) => {
+      if (currentTime - lastTime >= frameInterval) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Update and draw particles
+        particlesRef.current.forEach(particle => {
+          particle.update(mouseRef.current.x, mouseRef.current.y);
+          particle.draw(ctx);
+        });
 
-      // Draw connections between nearby particles
-      ctx.strokeStyle = 'var(--accent)';
-      ctx.lineWidth = 0.5;
-      
-      for (let i = 0; i < particlesRef.current.length; i++) {
-        for (let j = i + 1; j < particlesRef.current.length; j++) {
-          const p1 = particlesRef.current[i];
-          const p2 = particlesRef.current[j];
-          const dx = p1.x - p2.x;
-          const dy = p1.y - p2.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          
-          if (distance < 100) {
-            ctx.globalAlpha = (100 - distance) / 100 * 0.3;
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.stroke();
+        // Draw connections between nearby particles (simplified for performance)
+        ctx.strokeStyle = 'var(--accent)';
+        ctx.lineWidth = 0.5;
+        
+        // Only draw connections for every other particle to reduce calculations
+        for (let i = 0; i < particlesRef.current.length; i += 2) {
+          for (let j = i + 2; j < particlesRef.current.length; j += 2) {
+            const p1 = particlesRef.current[i];
+            const p2 = particlesRef.current[j];
+            const dx = p1.x - p2.x;
+            const dy = p1.y - p2.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < 80) { // Reduced connection distance
+              ctx.globalAlpha = (80 - distance) / 80 * 0.2; // Reduced opacity
+              ctx.beginPath();
+              ctx.moveTo(p1.x, p1.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.stroke();
+            }
           }
         }
+        
+        ctx.globalAlpha = 1;
+        lastTime = currentTime;
       }
-      
-      ctx.globalAlpha = 1;
       
       animationRef.current = requestAnimationFrame(animate);
     };
