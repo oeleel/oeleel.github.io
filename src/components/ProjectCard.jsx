@@ -1,10 +1,11 @@
 import React from 'react';
 import Tag from './Tag.jsx';
+import Button from './Button.jsx';
 
-function ProjectCard({ project, onOpen }) {
+function ProjectCard({ project, isExpanded, onToggle }) {
   return (
-    <article className="card" aria-labelledby={`${project.title}-h3`}>
-      <button className="card-body" onClick={onOpen} aria-haspopup="dialog" aria-controls="project-modal">
+    <article className={`card ${isExpanded ? 'card-expanded-state' : ''}`} aria-labelledby={`${project.title}-h3`}>
+      <button className="card-body" onClick={onToggle}>
         <img
           src={project.image}
           srcSet={project.srcset}
@@ -22,6 +23,18 @@ function ProjectCard({ project, onOpen }) {
           </div>
         </div>
       </button>
+      
+      <div className={`card-expanded ${isExpanded ? 'expanded' : 'collapsed'}`}>
+        <div className="expanded-content">
+          <div className="expanded-details">
+            <p className="muted">{project.details}</p>
+            <div className="btn-row">
+              <Button className="primary" as="a" href={project.links.demo} target="_blank" rel="noreferrer">Live Demo</Button>
+              <Button as="a" href={project.links.code} target="_blank" rel="noreferrer">Source Code</Button>
+            </div>
+          </div>
+        </div>
+      </div>
     </article>
   );
 }

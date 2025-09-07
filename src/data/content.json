@@ -1,20 +1,25 @@
 {
   "name": "Leo Lee",
-  "tagline": "Software Engineer · Building fast, thoughtful products",
-  "summary": "I design and ship performant web apps with an eye for UX, accessibility, and maintainability. Previously at ExampleCo; B.S. in CS. I care about building tools that feel fast and help people get things done.",
+  "homepage": {
+    "tagline": "Software Engineer & Data Scientist",
+    "summary": ""
+  },
+  "about": {
+  "summary":"Hello! My name is Leo Lee, and I'm a Computer Science and Applied Statistics student at UVA with experience in full-stack development, machine learning, and software engineering. Currently working as a CS Teaching Assistant and undergraduate researcher with Dr. Yanjun Qi, working on agentic AI. If I'm not behind my computer, you can find me playing golf, working out, or trying new food!" 
+  },
   "skills": {
-    "Languages": ["Python", "Java", "JavaScript", "C++", "SQL", "HTML", "CSS"],
-    "Libraries/Frameworks": ["React", "Node.js", "Spring Boot", "Flask", "React", "REST APIs", "Cmake"],
-    "Tools": ["Git", "PostgreSQL", "Docker"]
+    "Languages": ["Python", "C++", "Java", "JavaScript", "HTML/CSS", "SQL", "C", "x86 Assembly"],
+    "Frameworks/Technologies": ["React", "Node.js", "Express.js", "REST APIs", "CMake", "Linux", "Jupyter", "PostgreSQL", "JSON", "Git"],
+    "Libraries": ["pandas", "XGBoost", "NumPy", "Matplotlib", "TensorFlow", "Keras", "scikit-learn"]
   },
   "projects": [
     {
       "title": "PGAssistant",
-      "image": "/images/placeholder.svg",
-      "srcset": "/images/placeholder.svg 400w",
-      "tags": ["Python", "XGBoost", "Scikit-learn", "Pandas", "Numpy", "Matplotlib", "Seaborn"],
-      "summary": "Outcome-focused one-liner.",
-      "details": "Problem: users struggled to X. Approach: designed Y with Z to reduce friction. Impact: cut task time by 42% and increased completion by 18%.",
+      "image": "/images/pgassistant_code.png",
+      "srcset": "/images/pgassistant_code.png 400w",
+      "tags": ["Python", "XGBoost", "NumPy", "Pandas", "scikit-learn", "Selenium", "SHAP"],
+      "summary": "ML pipeline predicting PGA Tour scores with 0.44 RMSE accuracy.",
+      "details": "• Built XGBoost model predicting player scoring averages with 0.44 RMSE and 70% variance explanation\n• Created Selenium web scraper to collect 1400+ player stats from PGA Tour website\n• Used feature ranking and cross-validation to identify top 9 predictive stats, reducing error by 15%\n• Applied SHAP analysis to find 'Greens in Regulation' and 'Birdie Percentage' as key predictors",
       "links": { "demo": "#", "code": "#" }
     },
     {
@@ -27,9 +32,9 @@
       "links": { "demo": "#", "code": "#" }
     }
   ],
-  "contact": { "email": "you@example.com", "location": "City, Country" },
+  "contact": { "email": "leosungwonlee@gmail.com", "location": "Charlottesville, VA" },
   "socials": [
-    { "label": "GitHub", "href": "https://github.com/oeleel" },
-    { "label": "LinkedIn", "href": "https://linkedin.com/in/leolee04" }
+    { "label": "GitHub", "href": "https://github.com/oeleel"},
+    { "label": "LinkedIn", "href": "https://linkedin.com/in/leolee04"}
   ]
 }

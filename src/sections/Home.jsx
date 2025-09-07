@@ -41,9 +41,9 @@ function Home({ content }) {
           </div>
         </div>
         <h1 ref={titleRef} className="hero-title fade-in-ready">{content.name}</h1>
-        <p ref={taglineRef} className="tagline fade-in-ready">{content.tagline}</p>
+        <p ref={taglineRef} className="tagline fade-in-ready">{content.homepage.tagline}</p>
         <p ref={summaryRef} className="hero-summary fade-in-ready" style={{ maxWidth: 760, margin: "0 auto" }}>
-          {content.summary}
+          {content.homepage.summary}
         </p>
         <div ref={buttonsRef} className="btn-row center fade-in-ready" style={{ justifyContent: "center" }}>
           <Button className="primary" as="a" href="#projects">See Projects</Button>

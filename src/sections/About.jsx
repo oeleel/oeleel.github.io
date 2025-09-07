@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import Section from '../components/Section.jsx';
-import Tag from '../components/Tag.jsx';
 
 function About({ content }) {
   const carouselRef = useRef(null);
@@ -15,7 +14,7 @@ function About({ content }) {
   }, []);
 
   return (
-    <Section id="about" title="About">
+    <Section id="about" title="About Me">
       <div className="stack" style={{ maxWidth: 900, margin: "0 auto" }}>
         {/* Image Carousel */}
         <div ref={carouselRef} className="image-carousel fade-in-ready">
@@ -35,20 +34,8 @@ function About({ content }) {
         </div>
 
         <p className="center muted" style={{ marginTop: 0 }}>
-          {content.summary}
+          {content.about.summary}
         </p>
-        <div className="skills">
-          {Object.entries(content.skills).map(([group, items]) => (
-            <div className="skill-box" key={group}>
-              <h4>{group}</h4>
-              <div className="tag-row">
-                {items.map((it) => (
-                  <Tag key={it}>{it}</Tag>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </Section>
   );

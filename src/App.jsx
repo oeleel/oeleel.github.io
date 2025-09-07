@@ -72,6 +72,10 @@ export default function App() {
   // Keyboard paging between sections (PageDown/PageUp/Space)
   useEffect(() => {
     function keyHandler(e) {
+      // Don't handle space key if user is typing in form inputs
+      const target = e.target;
+      const isFormInput = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.contentEditable === 'true';
+      
       const order = ["home", "about", "experience", "projects", "resume", "contact"];
       const idx = order.indexOf(active);
       const prev = order[Math.max(0, idx - 1)];
@@ -87,8 +91,10 @@ export default function App() {
 
       const key = e.key;
       const isSpace = key === " " || key === "Spacebar";
-      if (key === "PageDown" || (isSpace && !e.shiftKey)) { e.preventDefault(); go(next); }
-      if (key === "PageUp" || (isSpace && e.shiftKey)) { e.preventDefault(); go(prev); }
+      
+      // Only handle space key if not in form inputs
+      if (key === "PageDown" || (isSpace && !e.shiftKey && !isFormInput)) { e.preventDefault(); go(next); }
+      if (key === "PageUp" || (isSpace && e.shiftKey && !isFormInput)) { e.preventDefault(); go(prev); }
     }
     window.addEventListener("keydown", keyHandler);
     return () => window.removeEventListener("keydown", keyHandler);
