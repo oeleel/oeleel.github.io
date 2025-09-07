@@ -8,10 +8,10 @@ function Resume({ content }) {
       <div className="resume-container">
         <div className="resume-actions">
           <Button as="a" className="primary" href="/documents/resume_site.pdf" download="Leo_L_Resume.pdf">
-            📄 Download PDF
+            Download PDF
           </Button>
           <Button as="a" className="secondary" href="/documents/resume_site.pdf" target="_blank" rel="noopener noreferrer">
-            🔗 Open in New Tab
+            Open in New Tab
           </Button>
         </div>
         <div className="pdf-viewer">

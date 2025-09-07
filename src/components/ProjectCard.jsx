@@ -38,7 +38,6 @@ function ProjectCard({ project, isExpanded, onToggle }) {
               <p className="muted">{project.details}</p>
             )}
             <div className="btn-row">
-              <Button className="primary" as="a" href={project.links.demo} target="_blank" rel="noreferrer">Live Demo</Button>
               <Button as="a" href={project.links.code} target="_blank" rel="noreferrer">Source Code</Button>
             </div>
           </div>

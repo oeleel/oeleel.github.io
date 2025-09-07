@@ -108,22 +108,6 @@ function Experience({ content }) {
             </div>
           </div>
         </div>
-        
-        <div className="experience-category certifications-section">
-          <h3>Certifications</h3>
-          <div className="certifications">
-            <div className="certification-item">
-              <h4>AWS Certified Developer</h4>
-              <p className="issuer">Amazon Web Services</p>
-              <p className="period">2023</p>
-            </div>
-            <div className="certification-item">
-              <h4>React Developer Certification</h4>
-              <p className="issuer">Meta</p>
-              <p className="period">2022</p>
-            </div>
-          </div>
-        </div>
 
         <div className="experience-category technical-skills-section">
           <h3>Technical Skills</h3>

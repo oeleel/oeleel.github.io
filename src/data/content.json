@@ -1,7 +1,7 @@
 {
   "name": "Leo Lee",
   "homepage": {
-    "tagline": "Software Engineer & Data Scientist",
+    "tagline": "Software Engineer, AI Researcher",
     "summary": ""
   },
   "about": {
@@ -20,16 +20,7 @@
       "tags": ["Python", "XGBoost", "NumPy", "Pandas", "scikit-learn", "Selenium", "SHAP"],
       "summary": "ML pipeline predicting PGA Tour scores with 0.44 RMSE accuracy.",
       "details": "• Built XGBoost model predicting player scoring averages with 0.44 RMSE and 70% variance explanation\n• Created Selenium web scraper to collect 1400+ player stats from PGA Tour website\n• Used feature ranking and cross-validation to identify top 9 predictive stats, reducing error by 15%\n• Applied SHAP analysis to find 'Greens in Regulation' and 'Birdie Percentage' as key predictors",
-      "links": { "demo": "#", "code": "https://github.com/oeleel/PGAssistant" }
-    },
-    {
-      "title": "Project Two",
-      "image": "/images/placeholder.svg",
-      "srcset": "/images/placeholder.svg 400w",
-      "tags": ["Python", "XGBoost", "Scikit-learn", "Pandas", "Numpy", "Matplotlib", "Seaborn"],
-      "summary": "Shipped a fast, interactive dashboard.",
-      "details": "Built a lightweight viz engine with off-main-thread data processing and virtualized rendering to keep 60fps on low-end devices.",
-      "links": { "demo": "#", "code": "#" }
+      "links": {"code": "https://github.com/oeleel/PGAssistant" }
     }
   ],
   "contact": { "email": "leosungwonlee@gmail.com", "location": "Charlottesville, VA" },
