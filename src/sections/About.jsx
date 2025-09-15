@@ -20,15 +20,15 @@ function About({ content }) {
         <div ref={carouselRef} className="image-carousel fade-in-ready">
           <div className="carousel-container">
             <div className="carousel-track">
-              <img src="images/carousel1.jpg" alt="Project showcase 1" className="carousel-image" />
-              <img src="images/carousel2.jpg" alt="Project showcase 2" className="carousel-image" />
-              <img src="images/carousel3.jpg" alt="Project showcase 3" className="carousel-image" />
-              <img src="images/carousel4.jpg" alt="Project showcase 4" className="carousel-image" />
-              <img src="images/carousel5.jpg" alt="Project showcase 5" className="carousel-image" />
+              <img src="/images/carousel1.jpg" alt="Project showcase 1" className="carousel-image" />
+              <img src="/images/carousel2.jpg" alt="Project showcase 2" className="carousel-image" />
+              <img src="/images/carousel3.jpg" alt="Project showcase 3" className="carousel-image" />
+              <img src="/images/carousel4.jpg" alt="Project showcase 4" className="carousel-image" />
+              <img src="/images/carousel5.jpg" alt="Project showcase 5" className="carousel-image" />
               {/* Duplicate first few images for seamless loop */ }
-              <img src="images/carousel1.jpg" alt="Project showcase 1" className="carousel-image" />
-              <img src="images/carousel2.jpg" alt="Project showcase 2" className="carousel-image" />
-              <img src="images/carousel3.jpg" alt="Project showcase 3" className="carousel-image" />
+              <img src="/images/carousel1.jpg" alt="Project showcase 1" className="carousel-image" />
+              <img src="/images/carousel2.jpg" alt="Project showcase 2" className="carousel-image" />
+              <img src="/images/carousel3.jpg" alt="Project showcase 3" className="carousel-image" />
             </div>
           </div>
         </div>
